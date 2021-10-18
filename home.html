@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                font-size: 18px;
+            }
+        </style>
+        <title>
+            Online Compiler
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="codemirror/lib/codemirror.js"></script>
+        <link href="codemirror/lib/codemirror.css" rel="stylesheet"/>
+        <script src="codemirror/mode/python/python.js"></script>
+        
+        <!--Theme-->
+        <link href="codemirror/theme/twilight.css" rel="stylesheet"/>
+        
+        <script src="codemirror/addon/edit/closetag.js"></script>
+    </head>
+    <body>
+        <center><h2>Python</h2> </center>
+        <form method = "post">
+            <textarea id="editor">
+print("hello world")
+for i in range(10):
+    print(i+1)</textarea>
+            <script>
+                var editor = CodeMirror.fromTextArea
+                (document.getElementById('editor'), {
+                    mode:"python",
+                    lineNumbers:true,
+                    autoCloseTags:true,
+                });
+                editor.setSize("600", "500");
+            </script>
+            <center><input type = "submit" class="btn btn-primary btn-lg" value = "Run" /></center>
+        </form>
+        <script src="main.js"></script>
+    </body>
+</html>
