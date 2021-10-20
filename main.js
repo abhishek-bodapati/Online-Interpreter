@@ -15,7 +15,10 @@ connection.onerror = error => {
 document.querySelector('form').addEventListener('submit', event => {
   event.preventDefault();
   let message = document.querySelector('#editor').value;
-  connection.send(message);
+  let inputs = document.querySelector('#inputs').value;
+  let mi = message + inputs; 
+
+  connection.send(JSON.stringify({message:message, inputs:inputs}));
   //document.querySelector('#editor').value = '';
 });
 
