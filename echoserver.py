@@ -21,13 +21,13 @@ async def echo(websocket, path):
         output, errors = p.communicate()
         if p.returncode:
             print(errors)
+            await websocket.send(errors)
         else:
             print(output)
+            await websocket.send(output)
 
         # Delete the .py file
         os.remove("x.py")
-
-        await websocket.send(message)
 
 async def main():
     async with serve(echo, "localhost", 8765):

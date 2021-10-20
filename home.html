@@ -26,7 +26,7 @@
         <script src="codemirror/addon/edit/closetag.js"></script>
     </head>
     <body>
-        <center><h2>Python</h2> </center>
+        <center><h1>Python</h1> </center>
         <form method = "post">
             <textarea id="editor">
 print("hello world")</textarea>
@@ -37,10 +37,14 @@ print("hello world")</textarea>
                     lineNumbers:true,
                     autoCloseTags:true,
                 });
-                editor.setSize("600", "500");
+                editor.setSize("600", "400");
             </script>
             <center><input type = "submit" class="btn btn-primary btn-lg" value = "Run" /></center>
         </form>
+        <center>
+            <h2>Output</h2>
+            <textarea readonly style="font-size:130%;max-width:100%" cols="150" rows="10" id="output"></textarea>
+        </center>
         <script src="main.js"></script>
     </body>
 </html>

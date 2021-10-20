@@ -18,3 +18,7 @@ document.querySelector('form').addEventListener('submit', event => {
   connection.send(message);
   //document.querySelector('#editor').value = '';
 });
+
+connection.onmessage = function(event) {
+  document.getElementById("output").innerHTML = event.data;
+}
