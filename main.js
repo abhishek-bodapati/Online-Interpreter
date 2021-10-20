@@ -16,5 +16,5 @@ document.querySelector('form').addEventListener('submit', event => {
   event.preventDefault();
   let message = document.querySelector('#editor').value;
   connection.send(message);
-  document.querySelector('#editor').value = '';
+  //document.querySelector('#editor').value = '';
 });
