@@ -32,7 +32,7 @@ async def echo(websocket, path):
             await websocket.send(output)
 
         # Delete the .py file
-        #os.remove("x.py")
+        os.remove("x.py")
 
 async def main():
     async with serve(echo, "localhost", 8765):
