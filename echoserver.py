@@ -9,7 +9,7 @@ async def echo(websocket, path):
 
         code = json.loads(message)["message"]
         inputs = json.loads(message)["inputs"]
-
+        print(code)
         # Create .py file
         filePath = 'x.py'
         try:
